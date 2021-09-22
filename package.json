@@ -1,0 +1,27 @@
+{
+  "name": "chesstweets",
+  "version": "1.0.0",
+  "description": "A bot that will consume live classical chess matches and tweet them out move by move including an image for the current board state",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Chess",
+    "world",
+    "championship",
+    "twitter",
+    "bot",
+    "chess",
+    "bot"
+  ],
+  "author": "Matt Maginniss",
+  "license": "MIT",
+  "dependencies": {
+    "chess-image-generator": "^1.0.9",
+    "chess.js": "^0.12.0",
+    "nconf": "^0.11.3",
+    "twitter": "^1.7.1"
+  }
+}
