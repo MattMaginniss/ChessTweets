@@ -1,9 +1,11 @@
+const got = require('got')
 const Twitter = require('twitter')
 const ECO = require("./ecoStuff/index.js")
 const nconf = require('nconf')
 const fs = require('fs')
-
-var ChessImageGenerator = require('chess-image-generator')
+const { Chess } = require('chess.js')
+const chess = new Chess()
+const ChessImageGenerator = require('chess-image-generator')
 
 var imageGenerator = new ChessImageGenerator({
   size: 1200,
@@ -14,6 +16,8 @@ var imageGenerator = new ChessImageGenerator({
 })
 
 let pgn = '1. Nf3 d5 2. e3 Nf6 3. d4 c5 4. h3 Nc6 5. c4 cxd4 6. exd4 e6 7. Nc3 Be7'
+chess.load_pgn(pgn)
+console.log(chess.ascii())
 imageGenerator.loadPGN(pgn)
 imageGenerator.generatePNG('./output.png')
 
